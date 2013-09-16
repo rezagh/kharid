@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:p="http://www.springframework.org/schema/p" 
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+        http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context/spring-context-3.0.xsd
+        ">
+	<!--
+		In the web.xml file I've defined a servlet mapping that forces any URL
+		that ends in .htm to reroute to the tradingapp Servlet (the
+		DispatcherServlet). This servlet analyzes the request URL and
+		determines which controller to pass control on to by using a URL
+		mapping defined in a Spring XML file. This Spring XML file must exist
+		in the /WEB-INF directory and it must have the same name as the
+		servlet name that you defined in the web.xml with a "-servlet.xml"
+		appended to it. Thus, we will create a file in the /WEB-INF directory
+		called tradingapp-servlet.xml.
+	-->
+
+	<bean id="frontController" class="com.kharid.controller.FrontController">
+	</bean>
+	
+	<context:component-scan base-package="com.kharid.controller"/>
+	
+	<!-- bean id="calculatorController" class="com.kharid.controller.CalculatorController">
+			<property name="methodNameResolver" ref="paramResolver" />
+			<property name="genericBiz" ref="genericBiz" />
+	</bean-->
+
+
+<!-- 
+	<bean id="inquiryController" class="com.kharid.controller.InquiryController">
+		<property name="methodNameResolver" ref="paramResolver" />
+		<property name="mailMan" ref="mailMan" />
+	</bean>
+ 
+
+	<bean id="urlMapping"
+		class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+		<property name="urlMap">
+			<map>
+				<entry key="/front.htm">
+					<ref bean="frontController" />
+				</entry>
+				<entry key="/redirect.htm">
+					<ref bean="redirectController" />
+				</entry>
+			</map>
+		</property>
+	</bean>
+-->
+	<bean id="paramResolver"
+		class="org.springframework.web.servlet.mvc.multiaction.ParameterMethodNameResolver">
+		<property name="paramName" value="method" />
+	</bean>
+
+	<!-- bean id="viewResolver"
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="viewClass">
+			<value>org.springframework.web.servlet.view.JstlView</value>
+		</property>
+		<property name="prefix">
+			<value>/WEB-INF/jsp/</value>
+		</property>
+		<property name="suffix">
+			<value>.jsp</value>
+		</property>
+		<property name="contentType">
+			<value>text/html;charset=UTF-8</value>
+		</property>
+	</bean-->
+
+	<bean id="tilesConfigurer" class="org.springframework.web.servlet.view.tiles2.TilesConfigurer">
+	  <property name="definitions">
+	    <list>
+	      <value>/WEB-INF/defs/tiles-defs.xml</value>
+	    </list>
+	  </property>
+
+	</bean>
+	<!-- bean id="viewResolver" class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+		<property name="viewClass" value="org.springframework.web.servlet.view.tiles2.TilesView"/>
+	</bean-->
+
+	<bean id="viewResolver" class="org.springframework.web.servlet.view.ResourceBundleViewResolver">
+	  <property name="basename" value="views"/>
+	</bean>
+	
+
+</beans>

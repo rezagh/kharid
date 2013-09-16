@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans	xmlns="http://www.springframework.org/schema/beans"
+       	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xmlns:dwr="http://www.directwebremoting.org/schema/spring-dwr"
+       	xsi:schemaLocation="http://www.springframework.org/schema/beans
+			http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+			http://www.directwebremoting.org/schema/spring-dwr
+			http://www.directwebremoting.org/schema/spring-dwr-2.0.xsd">
+
+	<!-- need to espace ampersand with &amp; -->
+	<bean id="dwrManager" class="com.kharid.dwr.DwrManager">
+		<property name="exchangeBiz" ref="exchangeBiz" />
+		
+		<property name="priceBiz" ref="priceBiz" />
+
+	   <dwr:remote javascript="DwrManager">
+	      <dwr:include method="getFeeds" />
+	      <dwr:include method="getExchange" />
+	      <dwr:include method="calculateFinalPrice" />
+	      <dwr:include method="calculateFinalPriceNonPhysical" />
+	      <dwr:include method="getVisaCards" />
+	      <dwr:include method="getMasterCardDetail" />
+
+	      
+	      
+	      <dwr:convert type="bean" class="com.kharid.vo.BaseVO"/>
+	      <dwr:convert type="bean" class="com.kharid.vo.PriceVO"/>
+	      <dwr:convert type="bean" class="com.kharid.vo.CreditCardVO"/>
+	      
+	      
+	   </dwr:remote>
+
+	</bean>
+	
+	<dwr:configuration />
+	<dwr:controller id="dwrController" debug="true" />
+
+</beans>	

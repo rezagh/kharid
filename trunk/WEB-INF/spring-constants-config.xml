@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:p="http://www.springframework.org/schema/p" 
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+        http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+<!-- Constants are defined here in a single map. -->
+
+
+	<bean id="constant" class="com.reza.constant.Constant">
+		<property name="constantValues">
+			<map>
+				<entry>
+					<key><value>REDIRECT_FRONT</value></key>
+					<value>redirect:/</value>
+				</entry>
+
+				<entry>
+					<key><value>MAX_LOGIN_ATTEMPT_COUNT</value></key>
+					<value>3</value>
+				</entry>
+<!-- Yahoo Currency URL -->
+				<entry>
+					<key><value>YAHOO_EXCHANGE_URL_USD_TO_AUD</value></key>
+					<value>http://finance.yahoo.com/d/quotes.csv?e=.csv&amp;f=sl1d1t1&amp;s=USDAUD=X</value>
+				</entry>
+				<entry>
+					<key><value>YAHOO_EXCHANGE_URL_AUD_TO_USD</value></key>
+					<value>http://finance.yahoo.com/d/quotes.csv?e=.csv&amp;f=sl1d1t1&amp;s=AUDUSD=X</value>
+				</entry>
+				<entry>
+					<key><value>YAHOO_EXCHANGE_URL_GBP_TO_AUD</value></key>
+					<value>http://finance.yahoo.com/d/quotes.csv?e=.csv&amp;f=sl1d1t1&amp;s=GBPAUD=X</value>
+				</entry>
+				<entry>
+					<key><value>YAHOO_EXCHANGE_URL_EUR_TO_AUD</value></key>
+					<value>http://finance.yahoo.com/d/quotes.csv?e=.csv&amp;f=sl1d1t1&amp;s=EURAUD=X</value>
+				</entry>
+				<entry>
+					<key><value>BMI_EN_EXCHANGE_URL</value></key>
+					<value>http://bmi.ir/En/RSS/RSSFeed.aspx?t=2&amp;curt=0</value>
+				</entry>
+				
+<!-- indicators in the page source of interbank.ir to find the exact exchange rate-->
+				<entry>
+					<key><value>INTER_BANK_EXCHANGE_URL</value></key>
+					<value>http://interbank.ir</value>
+				</entry>
+
+				<entry>
+					<key><value>INTERBANK_AUD_PAGE_INDICATOR</value></key>
+					<value type="java.lang.String">&#1583;&#1604;&#1575;&#1585; &#1575;&#1587;&#1578;&#1585;&#1575;&#1604;&#1610;&#1575;</value>
+				</entry>
+
+				<entry>
+					<key><value>INTERBANK_USD_PAGE_INDICATOR</value></key>
+					<value>&#1583;&#1604;&#1575;&#1585; &#1570;&#1605;&#1585;&#1610;&#1705;&#1575;</value>
+				</entry>
+
+				<entry>
+					<key><value>INTERBANK_GBP_PAGE_INDICATOR</value></key>
+					<value>&#1662;&#1608;&#1606;&#1583; &#1575;&#1606;&#1711;&#1604;&#1587;&#1578;&#1575;&#1606;</value>
+				</entry>
+
+				<entry>
+					<key><value>INTERBANK_CAD_PAGE_INDICATOR</value></key>
+					<value>&#1583;&#1604;&#1575;&#1585; &#1705;&#1575;&#1606;&#1575;&#1583;&#1575;</value>
+				</entry>
+
+				<entry>
+					<key><value>INTERBANK_EUR_PAGE_INDICATOR</value></key>
+					<value>&#1610;&#1608;&#1585;&#1608;</value>
+				</entry>
+				
+			</map>
+		</property>
+	</bean>
+</beans>

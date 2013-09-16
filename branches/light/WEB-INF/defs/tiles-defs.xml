@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+<tiles-definitions>
+	<definition name="indexPage" template="/WEB-INF/jsp/layout/firstPageLayout.jsp">
+		<put-attribute name="title" value="KharidSaman.com | Index" />
+		<put-attribute name="header" value="/WEB-INF/jsp/layout/topSection.jsp" />
+		<put-attribute name="rightColumn" value="/WEB-INF/jsp/layout/rightMenu.jsp" />
+		<put-attribute name="body" value="/WEB-INF/jsp/index.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/jsp/layout/buttomSection.jsp" />
+	</definition>
+	
+	<definition name="calculatorPage" template="/WEB-INF/jsp/layout/firstPageLayout.jsp">
+		<put-attribute name="title" value="KharidSaman.com | Calculator" />
+		<put-attribute name="header" value="/WEB-INF/jsp/layout/topSection.jsp" />
+		<put-attribute name="rightColumn" value="/WEB-INF/jsp/layout/rightMenu.jsp" />
+		<put-attribute name="body" value="/WEB-INF/jsp/calculator.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/jsp/layout/buttomSection.jsp" />
+	</definition>
+
+	<definition name="booksPage" template="/WEB-INF/jsp/layout/firstPageLayout.jsp">
+		<put-attribute name="title" value="KharidSaman.com | Calculator" />
+		<put-attribute name="header" value="/WEB-INF/jsp/layout/topSection.jsp" />
+		<put-attribute name="rightColumn" value="/WEB-INF/jsp/layout/rightMenu.jsp" />
+		<put-attribute name="body" value="/WEB-INF/jsp/shoppingItems/books.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/jsp/layout/buttomSection.jsp" />
+	</definition>
+
+
+	<definition name="goodsPage" template="/WEB-INF/jsp/layout/firstPageLayout.jsp">
+		<put-attribute name="title" value="KharidSaman.com | Calculator" />
+		<put-attribute name="header" value="/WEB-INF/jsp/layout/topSection.jsp" />
+		<put-attribute name="rightColumn" value="/WEB-INF/jsp/layout/rightMenu.jsp" />
+		<put-attribute name="body" value="/WEB-INF/jsp/shoppingItems/goods.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/jsp/layout/buttomSection.jsp" />
+	</definition>
+
+	<definition name="inquiryPage" template="/WEB-INF/jsp/layout/firstPageLayout.jsp">
+		<put-attribute name="title" value="KharidSaman.com | Calculator" />
+		<put-attribute name="header" value="/WEB-INF/jsp/layout/topSection.jsp" />
+		<put-attribute name="rightColumn" value="/WEB-INF/jsp/layout/rightMenu.jsp" />
+		<put-attribute name="body" value="/WEB-INF/jsp/inquiry.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/jsp/layout/buttomSection.jsp" />
+	</definition>
+
+	<definition name="ccPage" template="/WEB-INF/jsp/layout/firstPageLayout.jsp">
+		<put-attribute name="title" value="KharidSaman.com | Calculator" />
+		<put-attribute name="header" value="/WEB-INF/jsp/layout/topSection.jsp" />
+		<put-attribute name="rightColumn" value="/WEB-INF/jsp/layout/rightMenu.jsp" />
+		<put-attribute name="body" value="/WEB-INF/jsp/cc.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/jsp/layout/buttomSection.jsp" />
+	</definition>
+
+	<definition name="paymentsPage" template="/WEB-INF/jsp/layout/firstPageLayout.jsp">
+		<put-attribute name="title" value="KharidSaman.com | Calculator" />
+		<put-attribute name="header" value="/WEB-INF/jsp/layout/topSection.jsp" />
+		<put-attribute name="rightColumn" value="/WEB-INF/jsp/layout/rightMenu.jsp" />
+		<put-attribute name="body" value="/WEB-INF/jsp/shoppingItems/payments.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/jsp/layout/buttomSection.jsp" />
+	</definition>
+
+	<definition name="faqPage" template="/WEB-INF/jsp/layout/firstPageLayout.jsp">
+		<put-attribute name="title" value="KharidSaman.com | Calculator" />
+		<put-attribute name="header" value="/WEB-INF/jsp/layout/topSection.jsp" />
+		<put-attribute name="rightColumn" value="/WEB-INF/jsp/layout/rightMenu.jsp" />
+		<put-attribute name="body" value="/WEB-INF/jsp/faq.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/jsp/layout/buttomSection.jsp" />
+	</definition>
+
+	<definition name="postagePage" template="/WEB-INF/jsp/layout/firstPageLayout.jsp">
+		<put-attribute name="title" value="KharidSaman.com | Calculator" />
+		<put-attribute name="header" value="/WEB-INF/jsp/layout/topSection.jsp" />
+		<put-attribute name="rightColumn" value="/WEB-INF/jsp/layout/rightMenu.jsp" />
+		<put-attribute name="body" value="/WEB-INF/jsp/postage.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/jsp/layout/buttomSection.jsp" />
+	</definition>
+
+	<definition name="engPage" template="/WEB-INF/jsp/layout/firstPageLayout.jsp">
+		<put-attribute name="title" value="KharidSaman.com | Calculator" />
+		<put-attribute name="header" value="/WEB-INF/jsp/layout/topSection.jsp" />
+		<put-attribute name="rightColumn" value="/WEB-INF/jsp/layout/rightMenu.jsp" />
+		<put-attribute name="body" value="/WEB-INF/jsp/fix/english.jsp" />
+		<put-attribute name="footer" value="/WEB-INF/jsp/layout/buttomSection.jsp" />
+	</definition>
+
+</tiles-definitions>

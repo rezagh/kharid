@@ -1,0 +1,1 @@
+put log4j.xml in lib folder 

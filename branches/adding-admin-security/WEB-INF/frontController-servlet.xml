@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+	<!--
+		In the web.xml file I've defined a servlet mapping that forces any URL
+		that ends in .htm to reroute to the tradingapp Servlet (the
+		DispatcherServlet). This servlet analyzes the request URL and
+		determines which controller to pass control on to by using a URL
+		mapping defined in a Spring XML file. This Spring XML file must exist
+		in the /WEB-INF directory and it must have the same name as the
+		servlet name that you defined in the web.xml with a "-servlet.xml"
+		appended to it. Thus, we will create a file in the /WEB-INF directory
+		called tradingapp-servlet.xml.
+	-->
+<beans>
+	<bean id="frontController" class="com.kharid.controller.FrontController">
+	</bean>
+
+	<bean id="redirectController" class="com.kharid.controller.RedirectController">
+	</bean>
+
+	<bean id="inquiryController" class="com.kharid.controller.InquiryController">
+		<property name="methodNameResolver" ref="paramResolver" />
+		<property name="mailMan" ref="mailMan" />
+	</bean>
+
+	<!-- bean id="userController" class="com.kharid.controller.UserController">
+		<property name="methodNameResolver" ref="paramResolver" />
+		<property name="userBiz" ref="userBiz" />
+	</bean-->
+
+	<!-- for dwr -->
+	<bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+		<property name="mappings">
+			<props>
+				<prop key="/engine.js">dwrController</prop>
+				<prop key="/util.js">dwrController</prop>
+				<prop key="/interface/**">dwrController</prop>
+				<prop key="/call/**">dwrController</prop>
+			</props>
+		</property>
+	</bean>
+
+	<bean id="urlMapping"
+		class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+		<property name="urlMap">
+			<map>
+				<entry key="/front.htm">
+					<ref bean="frontController" />
+				</entry>
+				<entry key="/redirect.htm">
+					<ref bean="redirectController" />
+				</entry>
+				<!-->entry key="/user.htm">
+					<ref bean="userController" />
+				</entry-->
+				<entry key="/inquiry.htm">
+					<ref bean="inquiryController" />
+				</entry>
+			</map>
+		</property>
+	</bean>
+
+	<bean id="paramResolver"
+		class="org.springframework.web.servlet.mvc.multiaction.ParameterMethodNameResolver">
+		<property name="paramName" value="method" />
+	</bean>
+
+	<bean id="viewResolver"
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="viewClass">
+			<value>org.springframework.web.servlet.view.JstlView</value>
+		</property>
+		<property name="prefix">
+			<value>/WEB-INF/jsp/</value>
+		</property>
+		<property name="suffix">
+			<value>.jsp</value>
+		</property>
+		<property name="contentType">
+			<value>text/html;charset=UTF-8</value>
+		</property>
+	</bean>
+
+	
+
+</beans>

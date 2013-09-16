@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="genericBiz" class="com.kharid.biz.impl.GenericBizImpl">
+		<property name="genericDao" ref="genericDao" />
+	</bean>
+	
+	<bean id="priceBiz" class="com.kharid.biz.impl.PriceBizImpl" parent="genericBiz">
+		<property name="exchangeService" ref="exchangeBiz" />
+		<property name="genericDao" ref="genericDao" />
+		<property name="yahooExchange" ref="yahooExchange" />
+		
+	</bean>
+
+	<bean id="exchangeBiz" class="com.kharid.biz.impl.ExchangeBizImpl" parent="genericBiz">
+		<property name="exchange" ref="bmiExchange" />
+	</bean>
+
+	<bean id="priceExchangeUtil" class="com.kharid.util.PriceExchangeUtil">
+	</bean>
+	
+	<bean id="bmiExchange" class="com.kharid.exchange.BMIExchange">
+		<property name="genericService" ref="genericBiz" />
+	</bean>
+	
+	<bean id="yahooExchange" class="com.kharid.exchange.YahooExchange"></bean>
+	
+<!-- mail sender -->	
+
+	<bean id="taskExecutor" class="org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor">
+	  <property name="corePoolSize" value="5" />
+	  <property name="maxPoolSize" value="10" />
+	  <property name="queueCapacity" value="25" />
+	</bean>
+
+	<bean id="mailMan" class="com.reza.mail.MailManager">
+	  <constructor-arg ref="taskExecutor" />
+	</bean>
+
+
+<!-- 
+	<bean id="prepaidMasterCalculator" class="com.kharid.biz.calculator.cctemplate.PrepaidMasterCalculator">
+	</bean>
+
+	<bean id="ccCalculatorFactory" class="com.kharid.biz.calculator.cctemplate.CcCalculatorFactoryBean">
+	</bean>
+
+	<bean id="calculatorTemplate" class="com.kharid.biz.calculator.CalculatorTemplate" abstract="true" >
+		<property name="exchangeService" ref="exchangeBiz" />
+	</bean>
+
+	<bean id="physicalCalculator" class="com.kharid.biz.calculator.PhysicalGoodCalculator" parent="calculatorTemplate" >
+	</bean>
+
+	<bean id="nonPhysicalCalculator" class="com.kharid.biz.calculator.NonPhysicalGoodCalculator" parent="calculatorTemplate"  >
+	</bean>
+ -->
+
+</beans>

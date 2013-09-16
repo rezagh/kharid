@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<!-- Constants are defined here in a single map. -->
+
+<beans>	
+	<bean id="constant" class="com.reza.constant.Constant"	singleton="true">
+		<property name="constantValues">
+			<map>
+				<entry>
+					<key><value>REDIRECT_FRONT</value></key>
+					<value>redirect:/</value>
+				</entry>
+
+				<entry>
+					<key><value>MAX_LOGIN_ATTEMPT_COUNT</value></key>
+					<value>3</value>
+				</entry>
+<!-- Yahoo Currency URL -->
+				<entry>
+					<key><value>YAHOO_EXCHANGE_URL_USD_TO_IRR</value></key>
+					<value>http://finance.yahoo.com/d/quotes.csv?e=.csv&amp;f=sl1d1t1&amp;s=USDIRR=X</value>
+				</entry>
+				<entry>
+					<key><value>YAHOO_EXCHANGE_URL_AUD_TO_IRR</value></key>
+					<value>http://finance.yahoo.com/d/quotes.csv?e=.csv&amp;f=sl1d1t1&amp;s=AUDIRR=X</value>
+				</entry>
+				<entry>
+					<key><value>YAHOO_EXCHANGE_URL_EUR_TO_IRR</value></key>
+					<value>http://finance.yahoo.com/d/quotes.csv?e=.csv&amp;f=sl1d1t1&amp;s=EURIRR=X</value>
+				</entry>
+				<entry>
+					<key><value>YAHOO_EXCHANGE_URL_GBP_TO_IRR</value></key>
+					<value>http://finance.yahoo.com/d/quotes.csv?e=.csv&amp;f=sl1d1t1&amp;s=GBPIRR=X</value>
+				</entry>
+				<entry>
+					<key><value>YAHOO_EXCHANGE_URL_AUD_TO_USD</value></key>
+					<value>http://finance.yahoo.com/d/quotes.csv?e=.csv&amp;f=sl1d1t1&amp;s=AUDUSD=X</value>
+				</entry>
+				<entry>
+					<key><value>YAHOO_EXCHANGE_URL_USD_TO_AUD</value></key>
+					<value>http://finance.yahoo.com/d/quotes.csv?e=.csv&amp;f=sl1d1t1&amp;s=USDAUD=X</value>
+				</entry>
+				<entry>
+					<key><value>BMI_EN_EXCHANGE_URL</value></key>
+					<value>http://bmi.ir/En/RSS/RSSFeed.aspx?t=2&amp;curt=0</value>
+				</entry>
+				
+				
+			</map>
+		</property>
+	</bean>
+</beans>

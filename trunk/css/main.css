@@ -1,0 +1,156 @@
+div.top{
+	
+	width: 100%;
+	float: right;
+	margin-bottom: 5px;
+	
+}	
+
+div.logo{
+	text-align:center;
+	background: #4B5360;
+	float: right;
+	padding: 2px;
+	height: 90px;
+	width: 300px;
+	color:white; 	
+}
+
+div.menu{
+	float:right;
+	direction:rtl;
+	background-color: #D4CAB6;
+	margin-right: 5px;
+	
+	width: 630px;
+	height:90px;
+		padding: 2px;
+	
+}
+
+div.rightmenu{
+	float: right;
+	
+	height: 300px;
+	
+	color: #000000;
+	width: 170px;
+}
+
+div.mainsection{
+	
+	margin-right:5px;
+	float: right;
+	background: #D4CAB6;
+	min-height: 597px;
+	width: 758px;
+	padding: 5px;	
+}
+
+
+input.calc{
+	width: 60px;
+	direction: ltr;	
+}
+
+input.farsi{
+	width: 90px;
+	direction: ltr;	
+}
+
+/* all body elements*/
+body{
+	font-family:verdana,helvetica,arial,sans-serif;
+	color:#000000;
+  	direction: rtl;
+  	
+  	background:#504634;
+  	/*font: bold 94%;*/ 
+}
+
+
+/* Header of news in front page */
+.newsHeader {font-size: 15}
+
+/* All the tables headers */
+th {
+	color: #FFFFFF;
+	border-right: 1px solid #C1DAD7;
+	border-bottom: 1px solid #C1DAD7;
+	border-top: 1px solid #C1DAD7;
+	text-align: center;
+	padding: 6px 6px 6px 12px;
+	background: #00ADE1 url(images/bg_header.jpg) no-repeat;
+}
+
+/* For the tables that show a list like events */
+td.list {
+	border-right: 1px solid #C1DAD7;
+	border-bottom: 1px solid #C1DAD7;
+	background: #fff;
+	padding: 6px 6px 6px 12px;
+	color: #6D929B;
+}
+
+/* For all td elements in forms like in add event */
+td.form{
+	border-right: 1px solid #C1DAD7;
+	border-bottom: 1px solid #C1DAD7;
+	background: #fff;
+	padding: 6px 6px 6px 12px;
+	color: #6D929B;
+}
+
+/* For buttons*/
+input.btn{
+  color:#000000; 
+  background-color:#D4CAB6;; 
+}
+
+/* For annc*/
+input.ann{
+  color:#050; 
+  font: bold 65%; 
+  background-color:; 
+  border: none;
+  background-color:#8CC34B;
+  font-size: 12;
+  padding: 3;
+  width: 100%;
+}
+
+/* For annc*/
+div.ann{
+	margin-top: 2;
+	background-color:#8CC34B;
+	height:9;
+}
+
+/* For all input elements */
+input.css,textarea.css,select.css{ 
+  border: 1px solid;
+  border-color:#D4CAB6;  
+}
+
+
+/* Empty cells don't get style or border without this. */
+table { 
+	empty-cells:show;
+	
+}
+
+/* For menu*/
+table.menu{
+background-color: #D4CAB6;
+text-decoration:none;
+}
+
+
+/* all a elements*/
+a{
+	text-decoration:none;
+	color:#000000;
+	
+}
+
+

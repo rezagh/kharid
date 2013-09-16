@@ -1,0 +1,8 @@
+Create a blank svn project:
+
+1- Create repository in unfuddle
+2- Create a blank project in eclise workspace
+3- in eclipse on the new project goto team>share and make the initial import into *trunk*
+4- delete the project from eclipse (from workspace only)
+4- outside eclipse move the project from workspace into tomcat/webapp (if needed that way)
+5- import the project back into eclipse

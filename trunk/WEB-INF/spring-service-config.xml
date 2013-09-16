@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+       http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+       http://www.springframework.org/schema/tx 
+       http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
+
+<!--  
+	<bean id="priceBiz" class="com.kharid.biz.impl.PriceBizImpl">
+		<property name="exchangeService" ref="exchangeBiz" />
+	</bean>
+
+	<bean id="exchangeBiz" class="com.kharid.biz.impl.ExchangeBizImpl">
+		<property name="yahooExchange" ref="yahooExchange" />
+	</bean>
+
+	<bean id="priceExchangeUtil" class="com.kharid.util.PriceExchangeUtil">
+	</bean>
+	
+	<bean id="bmiExchange" class="com.kharid.exchange.BMIExchange">
+		<property name="genericService" ref="genericBiz" />
+	</bean>
+
+	<bean id="interbankExchange" class="com.kharid.exchange.InterbankExchange">
+	</bean>
+	
+	<bean id="yahooExchange" class="com.kharid.exchange.YahooExchange"></bean>
+	-->
+<!-- mail sender -->	
+
+	<bean id="taskExecutor" class="org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor">
+	  <property name="corePoolSize" value="5" />
+	  <property name="maxPoolSize" value="10" />
+	  <property name="queueCapacity" value="25" />
+	</bean>
+
+	<bean id="mailMan" class="com.reza.mail.MailManager">
+	  <constructor-arg ref="taskExecutor" />
+	</bean>
+
+
+<!-- 
+	<bean id="prepaidMasterCalculator" class="com.kharid.biz.calculator.cctemplate.PrepaidMasterCalculator">
+	</bean>
+
+	<bean id="ccCalculatorFactory" class="com.kharid.biz.calculator.cctemplate.CcCalculatorFactoryBean">
+	</bean>
+
+	<bean id="calculatorTemplate" class="com.kharid.biz.calculator.CalculatorTemplate" abstract="true" >
+		<property name="exchangeService" ref="exchangeBiz" />
+	</bean>
+
+	<bean id="physicalCalculator" class="com.kharid.biz.calculator.PhysicalGoodCalculator" parent="calculatorTemplate" >
+	</bean>
+
+	<bean id="nonPhysicalCalculator" class="com.kharid.biz.calculator.NonPhysicalGoodCalculator" parent="calculatorTemplate"  >
+	</bean>
+ -->
+
+</beans>
